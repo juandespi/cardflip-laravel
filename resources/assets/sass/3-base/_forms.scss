@@ -1,0 +1,99 @@
+//////////////////
+//     forms
+//////////////////
+
+fieldset {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  font-weight: 600;
+  margin-bottom: $small-spacing / 2;
+  padding: 0;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: $small-spacing / 2;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  font-family: $base-font-family;
+  font-size: 16px;
+}
+
+#{$all-text-inputs} {
+  appearance: none;
+  background-color: $input-bg;
+  border: $input-border 1px solid;
+  border-radius: $base-border-radius;
+  box-shadow: $_form-box-shadow;
+  box-sizing: border-box;
+  margin-bottom: $small-spacing;
+  padding: $base-spacing / 3;
+  @include transition(all .5s $ease-out-quad);
+  width: 100%;
+
+  &:hover {
+    // border-color: shade($input-hover-border, 20%);
+    background-color: $input-hover-bg;
+    border-color: $input-hover-border 1px solid;
+  }
+
+  &:focus {
+    border: $input-focus-border 1px solid;
+    box-shadow: $input-focus-box-shadow;
+    outline: none;
+  }
+
+  &:disabled {
+    // background-color: shade($base-background-color, 5%);
+    background-color: $input-disabled-bg;
+    cursor: not-allowed;
+
+    &:hover {
+      border: $input-disabled-border;
+    }
+  }
+
+  &::placeholder {
+    color: tint($base-font-color, 40%);
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-right: $small-spacing / 2;
+}
+
+[type="file"] {
+  margin-bottom: $small-spacing;
+  width: 100%;
+}
+
+select {
+  margin-bottom: $small-spacing;
+  width: 100%;
+}
+
+[type="checkbox"],
+[type="radio"],
+[type="file"],
+select {
+  &:focus {
+    // outline: $focus-outline;
+    // outline-offset: $focus-outline-offset;
+  }
+}

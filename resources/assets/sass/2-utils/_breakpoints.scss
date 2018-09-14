@@ -1,0 +1,92 @@
+/*====================================*\
+  >> breakpoints
+/*====================================*/
+  $s-272: convert(272,px,em); // 18.75em
+  $s-471: convert(413,px,em); // 18.75em
+  $s-472: convert(414,px,em);
+  $m-640: convert(640,px,em); // 40em
+  $m-641: convert(641,px,em); // 40.0625em
+  $l-749: convert(749,px,em); //63.9375em
+  $l-750: convert(750,px,em); //64em
+
+  // bootstrap breakpoints
+  $xs-480: convert(480,px,em);
+  $sm-768: convert(768,px, em);
+  $md-992: convert(992,px,em);
+  $lg-1200: convert(1200,px,em);
+
+  // new
+  $cnv-768: convert(768, px, em);
+  $cnv-992: convert(992, px, em);
+  $cnv-1200: convert(1200, px, em);
+
+  $cnv-767: convert(767, px, em);
+  $cnv-991: convert(991, px, em);
+  $cnv-1199: convert(1199, px, em);
+  $cnv-1300: convert(1300, px, em);
+
+  $cnv-472: convert(472, px, em);
+  $cnv-641: convert(641, px, em);
+  $cnv-471: convert(471, px, em);
+  $cnv-640: convert(640, px, em);
+
+  $cnv-1301: convert(1301, px, em);
+  $cnv-1500: convert(1500, px, em);
+  $cnv-1650: convert(1650, px, em);
+  $cnv-1750: convert(1750, px, em);
+
+  $cnv-1499: convert(1499, px, em);
+  $cnv-1649: convert(1649, px, em);
+
+@mixin media($queries) {
+  @if length($queries) == 0 { @content; }
+
+  @else {
+    $first-key: nth(map-keys($queries), 1);
+
+    @media ($first-key: map-get($queries, $first-key)) {
+      $queries: map-remove($queries, $first-key);
+      @include media($queries) { @content; }
+    }
+  }
+}
+
+$breakpoints: (
+  'mb'    : (max-width: $cnv-991),
+  'pc'    : (min-width: $cnv-992),
+
+  'min-xs': (min-width: 0),
+  'min-sm': (min-width: $cnv-768),
+  'min-md': (min-width: $cnv-992),
+
+  'min-pc': (min-width: 1025px),
+  'min-lg': (min-width: $cnv-1200),
+
+  'max-xs': (max-width: $cnv-767),
+  'max-sm': (max-width: $cnv-991),
+  'max-md': (max-width: $cnv-1199),
+  'max-lg': (max-width: $cnv-1300),
+
+  'min-mb-s': (min-width: $cnv-472),
+  'min-mb-md': (min-width: $cnv-641),
+  'max-mb-xs': (max-width: $cnv-471),
+  'max-mb-s': (max-width: $cnv-640),
+
+  'min-pc-md': (min-width: $cnv-1301),
+  'min-pc-lg': (min-width: $cnv-1500),
+  'min-pc-xl': (min-width: $cnv-1650),
+  'min-pc-xxl': (min-width: $cnv-1750),
+
+  'max-pc-md': (max-width: $cnv-1499),
+  'max-pc-lg': (max-width: $cnv-1649),
+  );
+
+@mixin mq($breakpoint) {
+  $queries: map-get($breakpoints, $breakpoint);
+
+  @if not $queries {
+    @error "No value could be retrieved from `#{$breakpoint}`. "
+    + "Please make sure it is defined in `$breakpoints` map.";
+  }
+  @include media($queries) { @content; }
+}

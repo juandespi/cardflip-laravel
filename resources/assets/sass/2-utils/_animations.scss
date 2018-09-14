@@ -1,0 +1,14 @@
+// All keyframes will be declared or defined here
+@include keyframes(white-slider){
+  0% { background: rgba(255, 255, 255, .8); }
+  50%, 100% {
+    background: {
+      color: #fff;
+      image: url($backdrop);
+    }
+  }
+  100% { width: 50%; }
+}
+@include keyframes(dropdown-reveal) {
+
+}

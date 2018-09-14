@@ -1,0 +1,141 @@
+// $color-primary: #E8E759,
+// $color-secondary: #CCCB1E,
+// $color-tertiary: #4444E4,
+// $color-accent: #4444E4,
+// $color-inactive: #8E8EEC,
+// $color-link: #1818A5,
+// $color-hover: #0F0F6C,
+// $color-active: #080840,
+// $color-focus: #59E8B3
+// Colors
+// $blue: #1565c0;
+// $dark-gray: #333;
+// $medium-gray: #999;
+// $light-gray: #ddd;
+// Font Colors
+
+// $action-color: $blue;
+
+// Border
+// $base-border-color: $light-gray;
+// $base-border: 1px solid $base-border-color;
+
+// Background Colors
+// $base-background-color: #fff;
+// $secondary-background-color: tint($base-border-color, 75%);
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+//  theme-colors
+////////////////////////////////////////////////////////////////////////////////
+$primary-color    :  null;
+$secondary-color  :  null;
+$tertiary-color   :  null;
+$accent-color     :  null;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//  font-colors
+////////////////////////////////////////////////////////////////////////////////
+$base-font-color: #333;
+
+////////////////////////////////////////////////////////////////////////////////
+//  typography-colors
+////////////////////////////////////////////////////////////////////////////////
+$link-bg            :  transparent;
+$link-txt           :  #1565c0;
+$link-border        :  transparent;
+$link-hover-bg      :  transparent;
+$link-hover-border  :  orangered;
+$link-hover-txt     :  transparent;
+
+////////////////////////////////////////////////////////////////////////////////
+//  button-colors
+////////////////////////////////////////////////////////////////////////////////
+$btn-bg: #ddd;
+$btn-txt: #333;
+$btn-bg-hover: lighten($btn-bg, 5%);
+
+////////////////////////////////////////////////////////////////////////////////
+//  form-colors
+////////////////////////////////////////////////////////////////////////////////
+$_form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$_form-box-shadow-focus: $_form-box-shadow, 0 0 5px rgba(#1565c0, 0.7);
+
+// Focus
+$focus-outline-color: transparentize(#1565c0, 0.4);
+$focus-outline-width: 3px;
+$focus-outline: $focus-outline-width solid $focus-outline-color;
+$focus-outline-offset: 2px;
+
+$label-txt               :  null;
+
+$input-bg                :  white;
+$input-txt               :  white;
+$input-border            :  grey;
+
+$input-focus-bg          :  pink;
+$input-focus-txt         :  pink;
+$input-focus-border      :  #1565c0;
+$input-focus-box-shadow  :  inset 0 1px 3px grey;
+
+$input-hover-bg          :  transparent;
+$input-hover-txt         :  transparent;
+$input-hover-border      :  transparent;
+
+$input-disabled-bg       :  grey;
+$input-disabled-txt      :  grey;
+$input-disabled-border   :  grey;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//  list-colors
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//  table-colors
+////////////////////////////////////////////////////////////////////////////////
+// <> general table styles
+$tbl-bg            :  null;
+$tbl-txt           :  null;
+$tbl-border        :  #ddd;
+$tbl-active-bg     :  null;
+$tbl-active-txt    :  null;
+$tbl-active-border :  null;
+$tbl-hover-bg      :  null;
+$tbl-hover-txt     :  null;
+$tbl-hover-border  :  null;
+
+$th-bg            :  null;
+$th-txt           :  null;
+$th-border        :  null;
+$th-active-bg     :  null;
+$th-active-txt    :  null;
+$th-active-border :  null;
+$th-hover-bg      :  null;
+$th-hover-txt     :  null;
+$th-hover-border  :  null;
+
+$td-bg            :  null;
+$td-txt           :  null;
+$td-border        :  null;
+$td-active-bg     :  null;
+$td-active-txt    :  null;
+$td-active-border :  null;
+$td-hover-bg      :  null;
+$td-hover-txt     :  null;
+$td-hover-border  :  null;
+
+////////////////////////////////////////////////////////////////////////////////
+//  header-colors
+////////////////////////////////////////////////////////////////////////////////
+$header-bg    :    null;
+$header-txt   :    null;
+
+////////////////////////////////////////////////////////////////////////////////
+//  footer-colors
+////////////////////////////////////////////////////////////////////////////////
+$footer-bg    :    null;
+$footer-txt   :    null;

@@ -1,0 +1,114 @@
+.wrapper {
+  @include size(100%);
+  background-image: url('/img/bg_pattern.jpg');
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: '';
+    position: absolute;
+    @include size(100%);
+    @include radial-gradient(center, transparent, rgba(#000, .9));
+  }
+}
+
+.wrapper--outer {
+  @include size(100%);
+  position: relative;
+}
+
+.wrapper--inner {
+  @include position(absolute, 50% null null 50%);
+  @include transform(translate(-50%, -50%));
+  @include transition(all 200ms ease-out);
+  // background: tomato;
+  @include transform-origin(center);
+  @include backface-visibility(hidden);
+
+  @include moz-fix() {
+    -moz-transition: none;
+    transition: none;
+  }
+}
+
+.card--wrapper {
+  height: inherit;
+  position: relative;
+  @include transform-origin(center);
+  @include size(327px 457px);
+  @include animation(rotate-x forwards infinite 8s $ease-in-out-back 5s);
+}
+
+.card {
+  position: relative;
+  display: block;
+  @include size(100%);
+  background: url('/img/full-card.png') center no-repeat;
+  @include background-size(105%);
+  @include transform-style(preserve-3d);
+  // @include transform(scale(.5));
+  @include transition(transform 300ms ease-out);
+
+  &:before {
+    content: '';
+    @include position(absolute, 50% null null 50%);
+    @include transform(translate(-50%, -50%) translateZ(0));
+    @include wh(calc(100% - 1px), calc(100% - 3px));
+    @include border-radius(15px);
+    @include box-shadow(#f0cf85 0px 0px 35px -0px);
+    @include animation(glow forwards infinite 2s $ease-in-out-back);
+  }
+}
+
+.card--percent {
+  color: #d22e21;
+  font: bold em(20px) bebasNeue;
+  display: inline-block;
+  @include position(absolute, 10px auto auto 10px);
+
+  &:last-child {
+    color: #f0cf85;
+    @include transform(rotate(-180deg));
+    @include position(absolute, auto 10px 10px auto);
+  }
+}
+
+@include keyframes(rotate-x) {
+  0% {
+    @include transform(rotate(0deg));
+  }
+
+  15%, 50% {
+    @include transform(rotate(180deg));
+  }
+
+  65%, 100% {
+    @include transform(rotate(360deg));
+  }
+};
+
+@include keyframes(glow) {
+  0% {
+    @include box-shadow(#f0cf85 0px 0px 35px -5px);
+    // @include transform(scale(.7) translate(-50%, -50%));
+  }
+  50% {
+    @include box-shadow(#f0cf85 0px 0px 35px 0px);
+    // @include transform(scale(1) translate(-50%, -50%));
+  }
+  100% {
+    @include box-shadow(#f0cf85 0px 0px 35px -5px);
+    // @include transform(scale(.7) translate(-50%, -50%));
+  }
+};
+
+// to remove IE buggy styles
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .wrapper--inner {
+    -ms-transition: none;
+    transition: none;
+  }
+  .card:before {
+    -ms-animation: none;
+    animation: none;
+  }
+}
